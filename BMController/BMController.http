@@ -1,0 +1,75 @@
+@BMController_HostAddress = http://localhost:5254
+
+POST {{BMController_HostAddress}}/api/movetasks
+Content-Type: application/json
+
+{
+  "id": 1,
+  "IP": "192.168.2.15",
+  "Source": "sd1//eft0.mkv",
+  "Destination": "//shadowplay//EFT"
+}
+
+###
+
+@id=1
+GET {{BMController_HostAddress}}/api/movetasks/{{id}}
+
+###
+
+PUT {{BMController_HostAddress}}/api/movetasks/{{id}}
+Content-Type: application/json
+
+{
+  "id": 1,
+  "IP": "192.168.2.15",
+  "Source": "sd1/eft0.mkv",
+  "Destination": "/shadowplay/EFT/updated"
+}
+
+###
+
+GET {{BMController_HostAddress}}/api/movetasks
+
+###
+
+POST {{BMController_HostAddress}}/api/movetasks
+Content-Type: application/json
+
+{
+  "id": 2,
+  "IP": "192.168.2.8",
+  "Source": "/AMEI0/EFT 46/Video ISO Files/EFT CAM 6 01.mp4",
+  "Destination": "E:\\tmp\\EFT CAM 6 01.mp4"
+}
+
+###
+
+@id=2
+GET {{BMController_HostAddress}}/api/movetasks/{{id}}
+
+###
+
+
+DELETE {{BMController_HostAddress}}/api/movetasks/{{id}}
+
+###
+
+
+@ip=192.168.2.34
+GET {{BMController_HostAddress}}/api/filesview/{{ip}}
+
+###
+
+
+PUT {{BMController_HostAddress}}/api/movetasks/{{id}}
+Content-Type: application/json
+
+{
+  "id": 2,
+  "IP": "192.168.2.8",
+  "Source": "sd1/eft0.mkv",
+  "Destination": "/shadowplay/EFT/updated"
+}
+
+###
